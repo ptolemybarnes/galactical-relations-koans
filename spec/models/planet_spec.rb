@@ -1,7 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe Planet, stage: :alpha do
+RSpec.describe Planet do
 
-  it { should belong_to(:sun) }
+  context '', stage: :alpha do
+    it { should belong_to(:sun) }
+  end
+
+  context '', stage: :beta do
+    it { should have_many(:moons) }
+  end
 
 end

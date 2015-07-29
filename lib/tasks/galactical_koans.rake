@@ -13,6 +13,7 @@ task :galactical_koans do
   puts "Expanding the galaxy..." + "\n" * 3
 
   Rake::Task['run_stage_alpha'].invoke
+  # if the above pass, run stage beta...
 end
 
 require 'rspec/core/rake_task'
