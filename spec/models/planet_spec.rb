@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Planet, type: :model do
+RSpec.describe Planet, stage: :alpha do
 
   it { should belong_to(:sun) }
 

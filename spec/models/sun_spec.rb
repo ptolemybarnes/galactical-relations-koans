@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Sun, type: :model do
+RSpec.describe Sun, stage: :alpha do
 
   it { should have_many(:planets) }
 end
