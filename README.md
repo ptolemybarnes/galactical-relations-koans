@@ -21,8 +21,8 @@ In the domain we have: planets, moon, a sun, and asteroids.
 - Asteroids have many planets.
 
 #### Delta
-- Planets have many asteroids, through Orbitings.
-- Asteroids have many planets, through Orbitings.
+- Suns have many moons, through planets.
+- Moons have a single Sun, through a planet.
 
 #### Epsilon
 - Implement all previous associations polymorphically, through Orbitings.

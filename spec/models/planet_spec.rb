@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Planet do
 
-  context '', stage: :alpha do
-    it { should belong_to(:sun) }
+  it 'orbits a single sun', stage: :alpha do
+    expect(subject).to belong_to(:sun)
   end
 
-  context '', stage: :beta do
-    it { should have_many(:moons) }
+  it 'is circled by many moons', stage: :beta do
+    expect(subject).to have_many(:moons) }
   end
 
-  context '', stage: :gamma do
-    it { should have_many(:asteroids) }
+  it 'is circled by many asteroids', stage: :gamma do
+    expect(subject).to have_many(:asteroids) }
   end
 
 end
