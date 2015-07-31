@@ -10,4 +10,8 @@ RSpec.describe Planet do
     it { should have_many(:moons) }
   end
 
+  context 'a planet is visited by many asterioids', stage: :gamma do
+    it { should have_many(:asteroids) }
+  end
+
 end

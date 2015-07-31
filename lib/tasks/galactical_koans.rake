@@ -15,6 +15,7 @@ namespace :galaxy do
 
     Rake::Task['galaxy:alpha'].invoke # if this passes, run beta
     Rake::Task['galaxy:beta'].invoke 
+    Rake::Task['galaxy:gamma'].invoke 
   end
 
   require 'rspec/core/rake_task'
@@ -31,6 +32,14 @@ namespace :galaxy do
 
     t.rspec_opts = '--tag stage:beta'
   end
+
+  RSpec::Core::RakeTask.new(:gamma) do |t|
+    puts "DESCRIPTION OF STAGE GAMMA"
+    puts
+
+    t.rspec_opts = '--tag stage:gamma'
+  end
+
 end
 
 
