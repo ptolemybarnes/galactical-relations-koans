@@ -7,19 +7,30 @@ end
 include RakeHelpers
 remove_default_spec_task
 
-task :default => 'galactical_koans'
+task :default => 'galaxy:run'
 
-task :galactical_koans do
-  puts "Expanding the galaxy..." + "\n" * 3
+namespace :galaxy do
+  task :run do
+    puts "Expanding the galaxy..." + "\n" * 3
 
-  Rake::Task['run_stage_alpha'].invoke
-  # if the above pass, run stage beta...
-end
+    Rake::Task['galaxy:alpha'].invoke # if this passes, run beta
+    Rake::Task['galaxy:beta'].invoke 
+  end
 
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:run_stage_alpha) do |t|
-  puts "DESCRIPTION OF STAGE ALPHA"
-  t.rspec_opts = '--tag stage:alpha'
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:alpha) do |t|
+    puts "DESCRIPTION OF STAGE ALPHA"
+    puts
+
+    t.rspec_opts = '--tag stage:alpha'
+  end
+
+  RSpec::Core::RakeTask.new(:beta) do |t|
+    puts "DESCRIPTION OF STAGE BETA"
+    puts
+
+    t.rspec_opts = '--tag stage:beta'
+  end
 end
 
 
