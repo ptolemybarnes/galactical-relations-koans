@@ -1,28 +1,32 @@
-# Rails Migration Koans
+# Galactical Associations Koans
 Confused about db relationships and writing migrations in Rails? These koans are intended as a learning tool just for you.
 
 ### Instructions
 1. Clone the repository.
-2. Make the tests pass. [This](http://edgeguides.rubyonrails.org/active_record_migrations.html#writing-a-migration) might help.
+2. Run `rake` to work progressively through the problems. Alternatively, run a single stage with `rake galaxy:stage`
 
 ### The Domain
-== Level 1 ==
-In the domain we have: planets, moon, and suns.
+In the domain we have: planets, moon, a sun, and asteroids.
+
+#### Alpha
 - Suns have many planets.
 - Planets belongs to a sun.
+
+#### Beta
 - Planets have many moons.
 - Moons belong to a planet and a sun.
 
-== Level 2 ==
-In the domain we have: planets and asteroids
+#### Gamma
 - Planets have many asteroids.
 - Asteroids have many planets.
 
-== Level 2 ==
-In the domain we have: planets, moon, and suns.
-- Suns have many planets, moons, and comets through Orbitings
-- Planets have many moons through Orbitings.
-- Moons belongs to a planet through an orbiting.
+#### Delta
+- Planets have many asteroids, through Orbitings.
+- Asteroids have many planets, through Orbitings.
+
+#### Epsilon
+- Implement all previous associations polymorphically, through Orbitings.
+
 
 ### To do
 - Set up a rake tasks that leads students progressively through problems.
