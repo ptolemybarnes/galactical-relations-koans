@@ -2,6 +2,9 @@ require_relative './rake_helpers.rb'
 include RakeHelpers
 remove_default_spec_task
 
+require 'yaml'
+DESCRIPTIONS = YAML.load_file(File.join(Rails.root, 'lib/tasks/stage_descriptions.yml'))
+
 task :default => 'galaxy:all'
 
 namespace :galaxy do
@@ -20,7 +23,7 @@ namespace :galaxy do
 
     RSpec::Core::RakeTask.new(stage) do |t|
       puts "DESCRIPTION OF STAGE #{stage.upcase}"
-      puts
+      puts DESCRIPTIONS[stage]
 
       t.rspec_opts = "--tag stage::#{stage}"
     end

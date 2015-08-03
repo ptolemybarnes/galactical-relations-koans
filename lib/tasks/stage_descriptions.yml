@@ -1,0 +1,4 @@
+---
+:alpha: In the first stage, let's declare the relationship between the Sun and Planets. Suns should have many planets. And planets should belong to a sun
+
+
