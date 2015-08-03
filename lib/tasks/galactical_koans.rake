@@ -1,9 +1,4 @@
-module RakeHelpers
-  def remove_default_spec_task
-    Rake.application['default'].prerequisites.delete('spec') 
-  end
-end
-
+require_relative './rake_helpers.rb'
 include RakeHelpers
 remove_default_spec_task
 
