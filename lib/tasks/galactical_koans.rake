@@ -10,7 +10,7 @@ remove_default_spec_task
 task :default => 'galaxy:all'
 
 namespace :galaxy do
-  stages = [:alpha, :beta, :gamma]
+  stages = [:alpha, :beta, :gamma, :delta]
 
   task :all do
     puts "Expanding the galaxy..." + "\n" * 3

@@ -7,7 +7,7 @@ RSpec.describe Sun, stage: :alpha do
   end
 
   it 'is circled by many moons, via planets', stage: :delta do
-    expect(subject).to have_many :planets
+    expect(subject).to have_many :moons
   end
 
 end

@@ -7,11 +7,11 @@ RSpec.describe Planet do
   end
 
   it 'is circled by many moons', stage: :beta do
-    expect(subject).to have_many(:moons) }
+    expect(subject).to have_many(:moons)
   end
 
   it 'is circled by many asteroids', stage: :gamma do
-    expect(subject).to have_many(:asteroids) }
+    expect(subject).to have_many(:asteroids)
   end
 
 end
