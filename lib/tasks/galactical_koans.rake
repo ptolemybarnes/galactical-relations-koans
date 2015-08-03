@@ -34,5 +34,3 @@ namespace :galaxy do
   
 end
 
-
-
