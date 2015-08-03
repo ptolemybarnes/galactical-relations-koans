@@ -26,6 +26,8 @@ namespace :galaxy do
       puts DESCRIPTIONS[stage]
 
       t.rspec_opts = "--tag stage::#{stage}"
+      t.verbose = false
+      t.fail_on_error = true
     end
 
   end
