@@ -11,7 +11,7 @@ namespace :galaxy do
   stages = [:alpha, :beta, :gamma, :delta]
 
   task :all do
-    puts "Expanding the galaxy..." + "\n" * 3
+    puts "Expanding the Galaxy".colourize.space(3)
 
     stages.each do |stage|
       Rake::Task["galaxy:#{stage}"].invoke
@@ -22,7 +22,7 @@ namespace :galaxy do
   stages.each do |stage|
 
     RSpec::Core::RakeTask.new(stage) do |t|
-      puts "DESCRIPTION OF STAGE #{stage.upcase}"
+      puts "========= STAGE #{stage.upcase} =========".space(1)
       puts DESCRIPTIONS[stage]
 
       t.rspec_opts = "--tag stage::#{stage}"
