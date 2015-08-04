@@ -5,7 +5,7 @@ remove_default_spec_task
 require 'yaml'
 DESCRIPTIONS = YAML.load_file(File.join(Rails.root, 'lib/tasks/stage_descriptions.yml'))
 
-task :default => 'galaxy:all'
+task galaxy: 'galaxy:all'
 
 namespace :galaxy do
   stages = [:alpha, :beta, :gamma, :delta]
@@ -24,6 +24,7 @@ namespace :galaxy do
     RSpec::Core::RakeTask.new(stage) do |t|
       puts "========= STAGE #{stage.upcase} =========".space(1)
       puts DESCRIPTIONS[stage]
+      puts
 
       t.rspec_opts = "--tag stage::#{stage}"
       t.verbose = false
