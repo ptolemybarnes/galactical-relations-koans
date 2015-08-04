@@ -1,4 +1,7 @@
----
 :alpha: In the first stage, let's declare the relationship between the Sun and Planets. Suns should have many planets. And planets should belong to a sun
+:beta:  Next up, planets have many moons and moons belong to a planet.
+:gamma: Let's implement a basic many-to-many connection between planets and asteroids.
+:delta: This stage introduced the concept of a join table.
+:epsilon: Final stage! Implement all previous stages polymorphically, with all associations running through Orbitings! (There are no specific tests for this.)
 
 
