@@ -14,7 +14,7 @@ In the domain we have: planets, moon, a sun, and asteroids.
 
 #### Beta
 - Planets have many moons.
-- Moons belong to a planet and a sun.
+- Moons belong to a planet.
 
 #### Gamma
 - Planets have many asteroids.
@@ -26,8 +26,3 @@ In the domain we have: planets, moon, a sun, and asteroids.
 
 #### Epsilon
 - Implement all previous associations polymorphically, through Orbitings.
-
-
-### To do
-- Set up a rake tasks that leads students progressively through problems.
-- Write more koans for other kinds of relationships.
