@@ -24,5 +24,5 @@ In the domain we have: planets, moon, a sun, and asteroids.
 - Suns have many moons, through planets.
 - Moons have a single Sun, through a planet.
 
-#### Epsilon
+#### Epsilon (there are no specific tests for this stage).
 - Implement all previous associations polymorphically, through Orbitings.
