@@ -3,7 +3,8 @@ Confused about db relationships and writing migrations in Rails? These koans are
 
 ### Instructions
 1. Clone the repository.
-2. Run `rake galaxy` to work progressively through the problems. Alternatively, run a single stage with `rake galaxy:stage`, e.g `rake galaxy:beta`.
+2. Create the database: `rake db:create`
+3. Run `rake galaxy` to work progressively through the problems. Alternatively, run a single stage with `rake galaxy:stage`, e.g `rake galaxy:beta`.
 
 ### Stages
 In the domain we have: planets, moon, a sun, and asteroids.
