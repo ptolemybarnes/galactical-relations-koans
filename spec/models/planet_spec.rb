@@ -2,8 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Planet do
 
+  let(:sun) { Sun.create }
+
   it 'orbits a single sun', stage: :alpha do
-    expect(subject).to belong_to(:sun)
+    planet = Planet.create(sun: sun)
+    expect(planet.sun).to eq sun
   end
 
   it 'is circled by many moons', stage: :beta do
