@@ -8,7 +8,7 @@ DESCRIPTIONS = YAML.load_file(File.join(Rails.root, 'lib/tasks/stage_description
 task galaxy: 'galaxy:all'
 
 namespace :galaxy do
-  stages = [:alpha, :beta, :gamma, :delta]
+  stages = [:alpha, :beta, :gamma, :delta, :epsilon]
 
   task :all do
     puts "Expanding the Galaxy".colourize.space(3)

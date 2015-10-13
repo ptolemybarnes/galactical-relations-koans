@@ -1,7 +1,8 @@
 :alpha: In the first stage, let's declare the relationship between the Sun and Planets. Suns should have many planets. And planets should belong to a sun
 :beta:  Next up, planets have many moons and moons belong to a planet.
-:gamma: Let's implement a basic many-to-many connection between planets and asteroids. This requires a join table.
-:delta: This stage introduces the concept of has-many-through. We need both a joinining table and a joining model
-:epsilon: Final stage! Implement all previous stages polymorphically, with all associations running through Orbitings! (There are no specific tests for this.)
+:gamma: Let's implement a basic many-to-many connection between planets and asteroids. The most straightforward way of implementing this association is with a join table.
+:delta: Create a model, 'Orbiting', to represent the connection between a planet and an asteroid.
+:epsilon: This stage introduces the ideas that connections between models can run through other models. A sun has many moons, but only via its planets. Likewise, a moon orbits a sun but does so via a planet. This stage shouldn't require you to make any changes to the database as the relationships you need already exist on the database level.
+:zeta: Final stage! Implement all previous stages polymorphically, with all associations running through Orbitings! (There are no specific tests for this.)
 
 
