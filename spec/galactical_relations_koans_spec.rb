@@ -88,7 +88,7 @@ describe 'Galactical Relations Koans' do
 
   describe 'Delta' do
 
-    let(:shapeship) { Shapeship.create }
+    let(:spaceship) { Spaceship.create }
     let(:captain  ) { Astronaut.create }
 
     it 'A spaceship has many astronauts, one of whom is the captain', stage: :delta do
@@ -97,13 +97,13 @@ describe 'Galactical Relations Koans' do
       Crewing.create(spaceship: spaceship, astronaut: captain , captain: true)
 
       expect(spaceship.astronauts.size).to eq 3 
-      expect(shapeship.captain).to eq captain
+      expect(spaceship.captain).to eq captain
     end
 
     it 'Astronauts crew many spaceships, and can serve as captain of one of them', stage: :delta do
       Crewing.create(spaceship: spaceship, astronaut: captain , captain: true)
 
-      expect(captain.spaceship).to eq(shapeship)
+      expect(captain.spaceship).to eq(spaceship)
     end
 
   end
