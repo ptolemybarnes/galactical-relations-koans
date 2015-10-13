@@ -88,30 +88,19 @@ describe 'Galactical Relations Koans' do
 
   describe 'Delta' do
 
-    it 'A planet is circled by many asteroids', stage: :delta do
-      expect(planet).to have_many(:asteroids)
+    let(:shapeship) { Shapeship.create }
 
-      Orbiting.create(asteroid: asteroid, planet: planet)
-      planet.save!
+    it 'A spaceship has many astronauts, one of whom is the captain', stage: :delta do
+      captain = Astronaut.create
+      Crewing.create(spaceship: spaceship, astronaut: Astronaut.create)
+      Crewing.create(spaceship: spaceship, astronaut: Astronaut.create)
+      Crewing.create(spaceship: spaceship, astronaut: captain , captain: true)
 
-      expect(planet.asteroids).to include(asteroid)
+      expect(spaceship.astronauts.size).to eq 3 
+      expect(shapeship.captain).to eq captain
     end
 
-    it 'An asteroid circles many planets', stage: :delta do
-      expect(asteroid).to have_many(:planets)
-      earth = Planet.create
-      mars  = Planet.create
-
-      earth = planet.asteroids << (vesta = Asteroid.create)
-      mars  = planet.asteroids << (ceres = Asteroid.create)
-      mars.asteroids << vesta
-
-      expect(earth.asteroids).to     include(vesta)
-      expect(earth.asteroids).not_to include(ceres)
-
-      [vesta, ceres].each do |asteroid|
-        expect(mars.asteroids).to include asteroid
-      end
+    it 'Astronauts crew many spaceships, and can serve as captain of one of them', stage: :delta do
     end
 
   end
