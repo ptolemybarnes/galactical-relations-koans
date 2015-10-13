@@ -63,5 +63,5 @@ class CreateJoinTable < ActiveRecord::Migration
 end
 ```
 
-The body of the migration is commented out. Uncomment them and the migration will run.
+The body of the migration is commented out. Uncomment them and the migration will run, then your tests should pass =D
 
