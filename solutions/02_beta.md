@@ -43,5 +43,3 @@ Galactical Relations Koans
           2 examples, 0 failures
 ```
 
-
-
