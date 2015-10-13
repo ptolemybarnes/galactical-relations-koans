@@ -48,7 +48,7 @@ describe 'Galactical Relations Koans' do
   describe 'Gamma' do
 
     it 'A planet is circled by many asteroids', stage: :gamma do
-      expect(planet).to have_many(:asteroids)
+      expect(planet).to have_and_belong_to_many(:asteroids)
 
       planet.asteroids << asteroid
       planet.save!
@@ -57,7 +57,7 @@ describe 'Galactical Relations Koans' do
     end
 
     it 'An asteroid circles many planets', stage: :gamma do
-      expect(asteroid).to have_many(:planets)
+      expect(asteroid).to have_and_belong_to_many(:planets)
       earth = Planet.create
       mars  = Planet.create
 
