@@ -61,14 +61,19 @@ describe 'Galactical Relations Koans' do
       earth = Planet.create
       mars  = Planet.create
 
-      earth = planet.asteroids << (vesta = Asteroid.create)
-      mars  = planet.asteroids << (ceres = Asteroid.create)
+      earth.asteroids << (vesta = Asteroid.create)
+      mars.asteroids << (ceres = Asteroid.create)
       mars.asteroids << vesta
 
+      earth.save!
+      mars.save!
+
+      earth.reload
       expect(earth.asteroids).to     include(vesta)
       expect(earth.asteroids).not_to include(ceres)
 
       [vesta, ceres].each do |asteroid|
+        asteroid.reload
         expect(mars.asteroids).to include asteroid
       end
     end
