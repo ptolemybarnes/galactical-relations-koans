@@ -58,15 +58,21 @@ describe 'Galactical Relations Koans' do
 
     it 'An asteroid circles many planets', stage: :gamma do
       expect(asteroid).to have_and_belong_to_many(:planets)
-      earth = Planet.create
-      mars  = Planet.create
 
-      earth.asteroids << (vesta = Asteroid.create)
-      mars.asteroids << (ceres = Asteroid.create)
+      planets = [ 
+        earth = Planet.create,
+        mars  = Planet.create
+      ]
+
+      vesta = Asteroid.create
+      ceres = Asteroid.create
+
+      earth.asteroids << vesta
       mars.asteroids << vesta
+      mars.asteroids << ceres
 
-      earth.save!
-      mars.save!
+
+      planets.each(&:reload)
 
       earth.reload
       expect(earth.asteroids).to     include(vesta)
