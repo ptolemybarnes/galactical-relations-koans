@@ -8,7 +8,7 @@ Let's start by generating the join model, `Crewing`:
 rails g model crewing astronaut:references spaceship:references captain:boolean
 ```
 
-This will create both a model and a migration for it, which looks somewhat familiar from stages alpha and beta:
+This will create both a model and a migration for its table, which will look similar to those of stages alpha and beta:
 
 ```ruby
 class CreateCrewings < ActiveRecord::Migration
