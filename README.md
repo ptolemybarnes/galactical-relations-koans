@@ -22,8 +22,12 @@ In the domain we have: planets, moons, a sun, and asteroids.
 - Asteroids have many planets.
 
 #### Delta
+- A spaceship has many astronauts, via crewings.
+- Astronauts have many spaceships, via crewings.
+- A spaceship can have a captain.
+- A captain can be captain of a spaceship.
+
+#### Epsilon 
 - Suns have many moons, through planets.
 - Moons have a single Sun, through a planet.
 
-#### Epsilon (there are no specific tests for this stage).
-- Implement all previous associations polymorphically, through Orbitings.
