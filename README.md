@@ -25,7 +25,7 @@ In the domain we have: planets, moons, a sun, and asteroids.
 - A spaceship has many astronauts, via crewings.
 - Astronauts have many spaceships, via crewings.
 - A spaceship can have a captain.
-- An astronaut can be captain of a spaceship.
+- An astronaut can be a captain of a spaceship.
 
 #### Epsilon 
 - Suns have many moons, through planets.
